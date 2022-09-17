@@ -1,10 +1,3 @@
-// const {
-//   listContacts,
-//   getContactById,
-//   removeContact,
-//   addContact,
-// } = require("./contacts");
-
 const contacts = require("./contacts");
 const argv = require("yargs").argv;
 // const yargs = require("yargs");
@@ -37,30 +30,3 @@ async function invokeAction({ action, id, name, email, phone }) {
 }
 
 invokeAction(argv);
-
-// console.log(argv);
-//
-//
-// const indexOf = process.argv.indexOf("--action");
-// if (indexOf !== -1) {
-//   const action = process.argv[indexOf + 1];
-//   invokeAction({ action });
-// }
-
-// const arr = hideBin(process.argv);
-// const { argv } = yargs(arr);
-// invokeAction(argv);
-// invokeAction({ action: "list" });
-// invokeAction({ action: "get", id: "5" });
-// invokeAction({
-//   action: "add",
-// name: "mango man",
-// email: "nulla.ante@vestibul.co.uk",
-// phone: "(992) 914-3792",
-// });
-//
-// listContacts();
-// getContactById(2);
-// removeContact(2);
-// addContact("mango man", "nulla.ante@vestibul.co.uk", "(992) 914-3792");
-// listContacts();
