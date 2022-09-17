@@ -1,0 +1,22 @@
+{
+  "name": "hw-01",
+  "version": "1.0.0",
+  "main": "index.js",
+  "homepage": "https://Ohleh.github.io/node-hw-01/",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index",
+    "start:dev": "nodemon index"
+  },
+  "author": "Oleh <oleg.kolischuk@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  },
+  "keywords": [],
+  "description": "",
+  "dependencies": {
+    "nanoid": "^3.3.4",
+    "yargs": "^17.5.1"
+  }
+}
