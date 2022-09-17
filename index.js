@@ -1,17 +1,8 @@
-// const {
-//   listContacts,
-//   getContactById,
-//   removeContact,
-//   addContact,
-// } = require("./contacts");
-
 const contacts = require("./contacts");
+// const argv = require("yargs").argv;
+const yargs = require("yargs");
+const { hideBin } = require("yargs/helpers");
 
-const argv = require("yargs").argv;
-// const yargs = require("yargs");
-// const { hideBin } = require("yargs/helpers");
-
-// TODO: рефакторить
 async function invokeAction({ action, id, name, email, phone }) {
   switch (action) {
     case "list":
@@ -25,12 +16,12 @@ async function invokeAction({ action, id, name, email, phone }) {
       break;
 
     case "add":
-      const addContact = await contacts.addContact({ name, email, phone });
+      const addContact = await contacts.addContact(name, email, phone);
       console.log(addContact);
       break;
 
     case "remove":
-      const removeContact = await contacts.addContact(id);
+      const removeContact = await contacts.removeContact(id);
       console.log(removeContact);
       break;
 
@@ -39,30 +30,7 @@ async function invokeAction({ action, id, name, email, phone }) {
   }
 }
 
-// console.log(argv);
-invokeAction(argv);
-//
-//
-// const indexOf = process.argv.indexOf("--action");
-// if (indexOf !== -1) {
-//   const action = process.argv[indexOf + 1];
-//   invokeAction({ action });
-// }
+const arr = hideBin(process.argv);
+const { argv } = yargs(arr);
 
-// const arr = hideBin(process.argv);
-// const { argv } = yargs(arr);
-// invokeAction(argv);
-// invokeAction({ action: "list" });
-// invokeAction({ action: "get", id: "5" });
-// invokeAction({
-//   action: "add",
-//   name: "mango man",
-//   email: "nulla.ante@vestibul.co.uk",
-//   phone: "(992) 914-3792",
-// });
-//
-// listContacts();
-// getContactById(2);
-// removeContact(2);
-// addContact("mango man", "nulla.ante@vestibul.co.uk", "(992) 914-3792");
-// listContacts();
+invokeAction(argv);
